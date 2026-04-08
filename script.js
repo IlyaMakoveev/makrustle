@@ -94,6 +94,39 @@ function toggleMaximize(id) {
     }
 }
 
+// Add event listeners for close and maximize buttons
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.close-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const windowEl = btn.closest('.window');
+            const id = windowEl.id.replace('window-', '');
+            closeWindow(id);
+        });
+        btn.addEventListener('touchend', (e) => {
+            e.stopPropagation();
+            const windowEl = btn.closest('.window');
+            const id = windowEl.id.replace('window-', '');
+            closeWindow(id);
+        }, { passive: false });
+    });
+
+    document.querySelectorAll('.maximize-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const windowEl = btn.closest('.window');
+            const id = windowEl.id.replace('window-', '');
+            toggleMaximize(id);
+        });
+        btn.addEventListener('touchend', (e) => {
+            e.stopPropagation();
+            const windowEl = btn.closest('.window');
+            const id = windowEl.id.replace('window-', '');
+            toggleMaximize(id);
+        }, { passive: false });
+    });
+});
+
 function bringToFront(win) {
     highestZIndex++;
     win.style.zIndex = highestZIndex;

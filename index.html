@@ -4,43 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MakRustle</title>
-    <link rel= "icon" href="./img/brand/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./connect.png" type="image/png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="./img/brand/logo.png" alt="Logo">
+    <div id="desktop">
+        <!-- Top Bar -->
+        <header id="top-bar">
+            <div class="menu-left">
+                <div class="menu-item" style="color: var(--accent)">MakRustle
+                    <div class="dropdown">
+                        <div class="dropdown-item">About Me</div>
+                    </div>
+                </div>
+                <div class="menu-item">Work
+                    <div class="dropdown">
+                        <div class="dropdown-item">Скоро тут будет портфолио</div>
+                    </div>
+                </div>
+                <div class="menu-item">Contact
+                    <div class="dropdown">
+                        <div class="dropdown-item" data-link="https://t.me/makrustle">Telegram</div>
+                        <div class="dropdown-item" data-link="https://instagram.com/makrustle">Instagram</div>
+                        <div class="dropdown-item" data-link="https://pinterest.com/makrustle">Pinterest</div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-right">
+                <div id="clock">12:00 PM</div>
+            </div>
+        </header>
+
+        <!-- Desktop Icons -->
+        <div class="desktop-icons">
+            <div class="icon" onclick="openWindow('welcome')">
+                <div class="icon-image">
+                    <img src="./logo.png" alt="welcome" referrerPolicy="no-referrer">
+                </div>
+                <span class="icon-label">WELCOME</span>
+            </div>
+            <div class="icon" onclick="openWindow('connect')">
+                <div class="icon-image">
+                    <img src="./connect.png" alt="connect" referrerPolicy="no-referrer">
+                </div>
+                <span class="icon-label">CONNECT</span>
+            </div>
         </div>
-    </header>
-    <div class="container">
-        <img src="./img/poster.jpg" alt="MakRustle" class="poster">
-        <a href="https://soundcloud.com/makrustle" class="text">когда дроп?</a>
-        <p class="text">Где меня найти:</p>
-        <div>
-            <a href="https://t.me/makrustle" class="button">
-                <img src="./img/social/telegram.png" alt="Telegram"> Telegram
-            </a>
-            <a href="https://vk.com/ilya_makoveev" class="button">
-                <img src="./img/social/vk.png" alt="VK"> VK
-            </a>
-            <a href="https://www.instagram.com/makrustle/" class="button">
-                <img src="./img/social/instagram.png" alt="Instagram"> Instagram
-            </a>  
-            <a href="https://soundcloud.com/makrustle" class="button">
-                <img src="./img/social/souncloud.png" alt="SoundCloud"> SoundCloud
-            </a>
+
+        <!-- Windows -->
+        <div id="window-welcome" class="window" style="top: 60px; left: 118px; width: 360px;">
+            <div class="window-header">
+                <div class="window-controls">
+                    <div class="close-btn" onclick="closeWindow('welcome')">
+                        <i data-lucide=""></i>
+                    </div>
+                    <div class="maximize-btn" onclick="toggleMaximize('welcome')">
+                        <i data-lucide=""></i>
+                    </div>
+                </div>
+                <div class="window-title">Welcome</div>
+            </div>
+            <div class="window-content">
+                <div class="welcome-title">
+                    Привет,<br>
+                    меня зовут <span class="strikethrough">Илья</span> <span class="bold">MakRustle</span>
+                </div>
+                <div class="welcome-desc">
+                    Хз ваще что люди в дескрипшнах пишут,<br>
+                    но тут скоро будет моё портфолио
+                </div>
+                <div class="welcome-desc">
+                    Кликни по иконкам на главном экране,<br>
+                    чтобы открыть приложение
+                </div>
+            </div>
+        </div>
+
+        <div id="window-connect" class="window hidden" style="top: 120px; left: 200px; width: 400px;">
+            <div class="window-header">
+                <div class="window-controls">
+                    <div class="close-btn" onclick="closeWindow('connect')">
+                        <i data-lucide=""></i>
+                    </div>
+                    <div class="maximize-btn" onclick="toggleMaximize('connect')">
+                        <i data-lucide=""></i>
+                    </div>
+                </div>
+                <div class="window-title">Connect.png</div>
+            </div>
+            <div class="window-content">
+                <img src="./connect.png" alt="Connect" class="connect-img" referrerPolicy="no-referrer">
+            </div>
         </div>
     </div>
-    <footer>
-        &copy; MakRustle 2021 - 2025г.
-    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-  

@@ -113,6 +113,9 @@ windows.forEach(win => {
     function startDrag(e) {
         if (windowStates[id]?.maximized) return;
         
+        // Не начинаем перетаскивание, если кликнули на кнопки управления
+        if (e.target.closest('.window-controls')) return;
+        
         isDragging = true;
         bringToFront(win);
         
